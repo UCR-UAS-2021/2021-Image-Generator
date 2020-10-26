@@ -86,3 +86,7 @@ Target Data/*
 #Generated Images
 Images/*
 Image Data/*
+__pycache__/target_gen.cpython-38.pyc
+__pycache__/proto.cpython-38.pyc
+__pycache__/image_generator.cpython-38.pyc
+__pycache__/argument_parser.cpython-38.pyc
