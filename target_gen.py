@@ -31,7 +31,7 @@ def create_target_image(target):
     img_letter = np.repeat(letter_filter[:, :, np.newaxis], 4, axis=2)
     png_shape = cv2.imread('Shapes/' + str(target.shape.value) + '.png', cv2.IMREAD_UNCHANGED)
 
-    shape_rotation = (randint(0, 3)) * 90
+    # shape_rotation = (randint(0, 3)) * 90
     rows, cols, _ = png_shape.shape
     matrix = cv2.getRotationMatrix2D((cols / 2, rows / 2), shape_rotation, 1)
     png_shape = cv2.warpAffine(png_shape, matrix, (cols, rows))
