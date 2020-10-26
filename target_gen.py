@@ -35,7 +35,7 @@ def create_target_image(target):
     # rows, cols, _ = png_shape.shape
     # matrix = cv2.getRotationMatrix2D((cols / 2, rows / 2), shape_rotation, 1)
     # png_shape = cv2.warpAffine(png_shape, matrix, (cols, rows))
-    # png_shape = png_shape[:, :, :3]
+    png_shape = png_shape[:, :, :3]
 
     shape_filter = cv2.inRange(png_shape, (100, 0, 0), (255, 255, 255))
     img_shape = np.repeat(shape_filter[:, :, np.newaxis], 4, axis=2)
