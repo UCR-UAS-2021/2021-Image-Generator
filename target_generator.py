@@ -45,6 +45,13 @@ def write_target_to_im(target: Target, im: np.ndarray):
     background = im_background.astype(float) / 255.
     alpha = img_filter
 
+    min_y = min(foreground.shape[0], background.shape[0], alpha.shape[0])
+    min_x = min(foreground.shape[1], background.shape[1], alpha.shape[1])
+
+    foreground = foreground[0:min_y, 0:min_x]
+    background = background[0:min_y, 0:min_x]
+    alpha = alpha[0:min_y, 0:min_x]
+
     foreground = cv2.multiply(alpha, foreground)
     background = cv2.multiply(1.0 - alpha, background)
 
